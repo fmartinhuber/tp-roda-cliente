@@ -8,21 +8,24 @@ import java.util.List;
 
 import javax.naming.CommunicationException;
 
-import beans.*;
-import interfaces.ManejoDatos;
+import dto.RodamientoDto;
+import interfaces.IAdministracionOV;
 
 public class Delegado {
 	
 	private static Delegado instancia;
-	private ManejoDatos manejoDeDatos;
+	private IAdministracionOV manejoDeDatos;
 	
 	private Delegado() throws CommunicationException{
+	
 		try {
 			conexionRemota();
-		} catch (MalformedURLException	| NotBoundException e) {
-			// TODO Auto-generated catch block
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public static Delegado getInstancia() throws CommunicationException, MalformedURLException, NotBoundException
@@ -35,7 +38,7 @@ public class Delegado {
 	private void conexionRemota() throws CommunicationException, MalformedURLException, NotBoundException
 	{
 		try {
-			manejoDeDatos=(ManejoDatos)Naming.lookup("//localhost/SistemaRodamiento");
+			manejoDeDatos=(IAdministracionOV)Naming.lookup("//localhost/SistemaRodamiento");
 			System.out.println("Se conecto correctamente con el servidor");
 			System.out.println("========================================");
 			System.out.println();
@@ -46,7 +49,7 @@ public class Delegado {
 	
 	//Aca van los metodos
 	
-	public List<RodamientoBean> obtenerRodamientos(){
+	public List<RodamientoDto> obtenerRodamientos(){
 		try{
 			return manejoDeDatos.obtenerRodamientos();
 		} catch(RemoteException e){

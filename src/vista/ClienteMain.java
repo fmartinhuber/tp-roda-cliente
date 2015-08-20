@@ -7,19 +7,19 @@ import java.util.List;
 
 import javax.naming.CommunicationException;
 
-import beans.*;
 import delegate.Delegado;
+import dto.RodamientoDto;
 
 public class ClienteMain {
 
 	public static void main(String[] args) throws CommunicationException, MalformedURLException, NotBoundException {
 
-		List<RodamientoBean> rodamientos = new ArrayList<RodamientoBean>();
+		List<RodamientoDto> rodamientos = new ArrayList<RodamientoDto>();
 		rodamientos = Delegado.getInstancia().obtenerRodamientos();
 		
-		for(RodamientoBean r : rodamientos){
-			System.out.println("Codigo: " +r.getCodigo() + " \t Marca: " +r.getMarca() + " \t Origen: " +r.getOrigen() + " \t Precio: " + r.getPrecio());
-		}	
+//		for(RodamientoDto r : rodamientos){
+//			System.out.println("Codigo: " +r.getCodigo() + " \t Marca: " +r.getMarca() + " \t Origen: " +r.getOrigen() + " \t Precio: " );
+//		}	
 
 	}
 
