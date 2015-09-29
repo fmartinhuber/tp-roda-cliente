@@ -9,12 +9,12 @@ import java.util.List;
 import javax.naming.CommunicationException;
 
 import dto.RodamientoDto;
-import interfaces.IAdministracionODV;
+import interfaces.IAdministracionOV;
 
 public class Delegado {
 	
 	private static Delegado instancia;
-	private IAdministracionODV manejoDeDatos;
+	private IAdministracionOV manejoDeDatos;
 	
 	private Delegado() throws CommunicationException{
 	
@@ -38,7 +38,7 @@ public class Delegado {
 	private void conexionRemota() throws CommunicationException, MalformedURLException, NotBoundException
 	{
 		try {
-			manejoDeDatos=(IAdministracionODV)Naming.lookup("//localhost/SistemaRodamiento");
+			manejoDeDatos=(IAdministracionOV)Naming.lookup("//localhost/SistemaRodamiento");
 			System.out.println("Se conecto correctamente con el servidor");
 			System.out.println("========================================");
 			System.out.println();
