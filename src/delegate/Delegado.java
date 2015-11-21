@@ -49,6 +49,7 @@ public class Delegado {
 	
 	//Aca van los metodos
 	
+	@Deprecated
 	public List<RodamientoDto> obtenerRodamientos(){
 		try{
 			return manejoDeDatos.obtenerRodamientos();
