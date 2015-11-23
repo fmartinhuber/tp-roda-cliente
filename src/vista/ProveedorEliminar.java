@@ -21,17 +21,13 @@ import javax.swing.SwingUtilities;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class ClienteModificar extends javax.swing.JFrame {
-
+public class ProveedorEliminar extends javax.swing.JFrame {
+	
 	private static final long serialVersionUID = 1L;
-	private JLabel lblCUIT;
-	private JTextField txtCUIT;
-	private JTextField txtRazonSocial;
 	private JButton btnVolver;
-	private JButton btnModificarCliente;
-	private JTextField txtMail;
-	private JLabel lblMail;
-	private JLabel lblRazonSocial;
+	private JButton btnEliminar;
+	private JTextField txtCUIT;
+	private JLabel lblCUIT;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -39,14 +35,14 @@ public class ClienteModificar extends javax.swing.JFrame {
 //	public static void main(String[] args) {
 //		SwingUtilities.invokeLater(new Runnable() {
 //			public void run() {
-//				ClienteModificar inst = new ClienteModificar();
+//				ProveedorEliminar inst = new ProveedorEliminar();
 //				inst.setLocationRelativeTo(null);
 //				inst.setVisible(true);
 //			}
 //		});
 //	}
 	
-	public ClienteModificar() {
+	public ProveedorEliminar() {
 		super();
 		initGUI();
 	}
@@ -56,12 +52,12 @@ public class ClienteModificar extends javax.swing.JFrame {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			pack();
 			setSize(400, 300);
-			setTitle("Modificar Cliente");
+			setTitle("Eliminar Proveedor");
 			getContentPane().setLayout(null);
 			{
 				lblCUIT = new JLabel();
 				getContentPane().add(lblCUIT);
-				lblCUIT.setText("CUIT:");
+				lblCUIT.setText("CUIT: ");
 				lblCUIT.setBounds(12, 15, 150, 25);
 			}
 			{
@@ -70,36 +66,14 @@ public class ClienteModificar extends javax.swing.JFrame {
 				txtCUIT.setBounds(180, 15, 180, 25);
 			}
 			{
-				lblRazonSocial = new JLabel();
-				getContentPane().add(lblRazonSocial);
-				lblRazonSocial.setText("Razon Social: ");
-				lblRazonSocial.setBounds(12, 45, 150, 25);
-			}
-			{
-				txtRazonSocial = new JTextField();
-				getContentPane().add(txtRazonSocial);
-				txtRazonSocial.setBounds(180, 45, 180, 25);
-			}
-			{
-				lblMail = new JLabel();
-				getContentPane().add(lblMail);
-				lblMail.setText("Mail: ");
-				lblMail.setBounds(12, 75, 150, 25);
-			}
-			{
-				txtMail = new JTextField();
-				getContentPane().add(txtMail);
-				txtMail.setBounds(180, 75, 180, 25);
-			}
-			{
-				btnModificarCliente = new JButton();
-				getContentPane().add(btnModificarCliente);
-				btnModificarCliente.setText("Modificar Cliente");
-				btnModificarCliente.setBounds(12, 185, 150, 65);
-				btnModificarCliente.addActionListener(new ActionListener() {
+				btnEliminar = new JButton();
+				getContentPane().add(btnEliminar);
+				btnEliminar.setText("Eliminar Proveedor");
+				btnEliminar.setBounds(12, 180, 150, 70);
+				btnEliminar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						System.out.println("Implementar logica");
+						System.out.println("Implementar el eliminar");
+						//TODO add your code for btnEliminar.actionPerformed
 					}
 				});
 			}
@@ -107,7 +81,7 @@ public class ClienteModificar extends javax.swing.JFrame {
 				btnVolver = new JButton();
 				getContentPane().add(btnVolver);
 				btnVolver.setText("Volver atrás");
-				btnVolver.setBounds(223, 185, 150, 65);
+				btnVolver.setBounds(192, 180, 150, 70);
 				btnVolver.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
 						dispose();

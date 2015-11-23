@@ -31,15 +31,15 @@ public class ClienteAdministracion extends javax.swing.JFrame {
 	/**
 	* Auto-generated main method to display this JFrame
 	*/
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				ClienteAdministracion inst = new ClienteAdministracion();
-				inst.setLocationRelativeTo(null);
-				inst.setVisible(true);
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				ClienteAdministracion inst = new ClienteAdministracion();
+//				inst.setLocationRelativeTo(null);
+//				inst.setVisible(true);
+//			}
+//		});
+//	}
 	
 	public ClienteAdministracion() {
 		super();

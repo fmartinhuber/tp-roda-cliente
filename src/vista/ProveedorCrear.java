@@ -21,17 +21,15 @@ import javax.swing.SwingUtilities;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class ClienteModificar extends javax.swing.JFrame {
+public class ProveedorCrear extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel lblCUIT;
 	private JTextField txtCUIT;
-	private JTextField txtRazonSocial;
+	private JLabel lblCUIT;
+	private JTextField txtNombre;
+	private JLabel lblNombre;
 	private JButton btnVolver;
-	private JButton btnModificarCliente;
-	private JTextField txtMail;
-	private JLabel lblMail;
-	private JLabel lblRazonSocial;
+	private JButton btnCrear;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -39,14 +37,14 @@ public class ClienteModificar extends javax.swing.JFrame {
 //	public static void main(String[] args) {
 //		SwingUtilities.invokeLater(new Runnable() {
 //			public void run() {
-//				ClienteModificar inst = new ClienteModificar();
+//				ProveedorCrear inst = new ProveedorCrear();
 //				inst.setLocationRelativeTo(null);
 //				inst.setVisible(true);
 //			}
 //		});
 //	}
 	
-	public ClienteModificar() {
+	public ProveedorCrear() {
 		super();
 		initGUI();
 	}
@@ -56,50 +54,17 @@ public class ClienteModificar extends javax.swing.JFrame {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			pack();
 			setSize(400, 300);
-			setTitle("Modificar Cliente");
+			setTitle("Crear Proveedor");
 			getContentPane().setLayout(null);
 			{
-				lblCUIT = new JLabel();
-				getContentPane().add(lblCUIT);
-				lblCUIT.setText("CUIT:");
-				lblCUIT.setBounds(12, 15, 150, 25);
-			}
-			{
-				txtCUIT = new JTextField();
-				getContentPane().add(txtCUIT);
-				txtCUIT.setBounds(180, 15, 180, 25);
-			}
-			{
-				lblRazonSocial = new JLabel();
-				getContentPane().add(lblRazonSocial);
-				lblRazonSocial.setText("Razon Social: ");
-				lblRazonSocial.setBounds(12, 45, 150, 25);
-			}
-			{
-				txtRazonSocial = new JTextField();
-				getContentPane().add(txtRazonSocial);
-				txtRazonSocial.setBounds(180, 45, 180, 25);
-			}
-			{
-				lblMail = new JLabel();
-				getContentPane().add(lblMail);
-				lblMail.setText("Mail: ");
-				lblMail.setBounds(12, 75, 150, 25);
-			}
-			{
-				txtMail = new JTextField();
-				getContentPane().add(txtMail);
-				txtMail.setBounds(180, 75, 180, 25);
-			}
-			{
-				btnModificarCliente = new JButton();
-				getContentPane().add(btnModificarCliente);
-				btnModificarCliente.setText("Modificar Cliente");
-				btnModificarCliente.setBounds(12, 185, 150, 65);
-				btnModificarCliente.addActionListener(new ActionListener() {
+				btnCrear = new JButton();
+				getContentPane().add(btnCrear);
+				btnCrear.setText("Crear Proveedor");
+				btnCrear.setBounds(12, 185, 150, 65);
+				btnCrear.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						System.out.println("Implementar logica");
+						System.out.println("Implementar el alta");
+						//TODO add your code for btnCrear.actionPerformed
 					}
 				});
 			}
@@ -113,6 +78,28 @@ public class ClienteModificar extends javax.swing.JFrame {
 						dispose();
 					}
 				});
+			}
+			{
+				lblNombre = new JLabel();
+				getContentPane().add(lblNombre);
+				lblNombre.setText("Nombre: ");
+				lblNombre.setBounds(12, 15, 140, 25);
+			}
+			{
+				txtNombre = new JTextField();
+				getContentPane().add(txtNombre);
+				txtNombre.setBounds(170, 15, 190, 25);
+			}
+			{
+				lblCUIT = new JLabel();
+				getContentPane().add(lblCUIT);
+				lblCUIT.setText("CUIT:");
+				lblCUIT.setBounds(12, 45, 140, 25);
+			}
+			{
+				txtCUIT = new JTextField();
+				getContentPane().add(txtCUIT);
+				txtCUIT.setBounds(170, 45, 190, 25);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

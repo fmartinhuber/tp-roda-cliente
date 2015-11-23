@@ -2,8 +2,6 @@ package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
 
 import javax.swing.WindowConstants;
 import javax.swing.SwingUtilities;
@@ -21,32 +19,29 @@ import javax.swing.SwingUtilities;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class ClienteModificar extends javax.swing.JFrame {
+public class ProveedorAdministracion extends javax.swing.JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JLabel lblCUIT;
-	private JTextField txtCUIT;
-	private JTextField txtRazonSocial;
 	private JButton btnVolver;
-	private JButton btnModificarCliente;
-	private JTextField txtMail;
-	private JLabel lblMail;
-	private JLabel lblRazonSocial;
+	private JButton btnEliminarProveedor;
+	private JButton btnModificarProveedor;
+	private JButton btnCrearProveedor;
 
 	/**
 	* Auto-generated main method to display this JFrame
 	*/
+	
 //	public static void main(String[] args) {
 //		SwingUtilities.invokeLater(new Runnable() {
 //			public void run() {
-//				ClienteModificar inst = new ClienteModificar();
+//				ProveedorAdministracion inst = new ProveedorAdministracion();
 //				inst.setLocationRelativeTo(null);
 //				inst.setVisible(true);
 //			}
 //		});
 //	}
 	
-	public ClienteModificar() {
+	public ProveedorAdministracion() {
 		super();
 		initGUI();
 	}
@@ -56,58 +51,49 @@ public class ClienteModificar extends javax.swing.JFrame {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			pack();
 			setSize(400, 300);
-			setTitle("Modificar Cliente");
+			setTitle("Administración Proveedor");
 			getContentPane().setLayout(null);
 			{
-				lblCUIT = new JLabel();
-				getContentPane().add(lblCUIT);
-				lblCUIT.setText("CUIT:");
-				lblCUIT.setBounds(12, 15, 150, 25);
-			}
-			{
-				txtCUIT = new JTextField();
-				getContentPane().add(txtCUIT);
-				txtCUIT.setBounds(180, 15, 180, 25);
-			}
-			{
-				lblRazonSocial = new JLabel();
-				getContentPane().add(lblRazonSocial);
-				lblRazonSocial.setText("Razon Social: ");
-				lblRazonSocial.setBounds(12, 45, 150, 25);
-			}
-			{
-				txtRazonSocial = new JTextField();
-				getContentPane().add(txtRazonSocial);
-				txtRazonSocial.setBounds(180, 45, 180, 25);
-			}
-			{
-				lblMail = new JLabel();
-				getContentPane().add(lblMail);
-				lblMail.setText("Mail: ");
-				lblMail.setBounds(12, 75, 150, 25);
-			}
-			{
-				txtMail = new JTextField();
-				getContentPane().add(txtMail);
-				txtMail.setBounds(180, 75, 180, 25);
-			}
-			{
-				btnModificarCliente = new JButton();
-				getContentPane().add(btnModificarCliente);
-				btnModificarCliente.setText("Modificar Cliente");
-				btnModificarCliente.setBounds(12, 185, 150, 65);
-				btnModificarCliente.addActionListener(new ActionListener() {
+				btnCrearProveedor = new JButton();
+				getContentPane().add(btnCrearProveedor);
+				btnCrearProveedor.setText("Crear Proveedor");
+				btnCrearProveedor.setBounds(12, 12, 190, 50);
+				btnCrearProveedor.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						System.out.println("Implementar logica");
+						ProveedorCrear pc = new ProveedorCrear();
+						pc.setVisible(true);
+					}
+				});
+			}
+			{
+				btnModificarProveedor = new JButton();
+				getContentPane().add(btnModificarProveedor);
+				btnModificarProveedor.setText("Modificar Proveedor");
+				btnModificarProveedor.setBounds(12, 134, 190, 50);
+				btnModificarProveedor.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent evt) {
+						ProveedorModificar pm = new ProveedorModificar();
+						pm.setVisible(true);
+					}
+				});
+			}
+			{
+				btnEliminarProveedor = new JButton();
+				getContentPane().add(btnEliminarProveedor);
+				btnEliminarProveedor.setText("Eliminar Proveedor");
+				btnEliminarProveedor.setBounds(12, 73, 190, 50);
+				btnEliminarProveedor.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent evt) {
+						ProveedorEliminar pe = new ProveedorEliminar();
+						pe.setVisible(true);
 					}
 				});
 			}
 			{
 				btnVolver = new JButton();
 				getContentPane().add(btnVolver);
-				btnVolver.setText("Volver atrás");
-				btnVolver.setBounds(223, 185, 150, 65);
+				btnVolver.setText("Volver al Menú Principal");
+				btnVolver.setBounds(152, 200, 221, 50);
 				btnVolver.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
 						dispose();

@@ -32,15 +32,15 @@ public class ClienteEliminar extends javax.swing.JFrame {
 	/**
 	* Auto-generated main method to display this JFrame
 	*/
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				ClienteEliminar inst = new ClienteEliminar();
-				inst.setLocationRelativeTo(null);
-				inst.setVisible(true);
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				ClienteEliminar inst = new ClienteEliminar();
+//				inst.setLocationRelativeTo(null);
+//				inst.setVisible(true);
+//			}
+//		});
+//	}
 	
 	public ClienteEliminar() {
 		super();

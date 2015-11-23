@@ -37,15 +37,15 @@ public class ClienteCrear extends javax.swing.JFrame {
 	/**
 	* Auto-generated main method to display this JFrame
 	*/
-	public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				ClienteCrear inst = new ClienteCrear();
-				inst.setLocationRelativeTo(null);
-				inst.setVisible(true);
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		SwingUtilities.invokeLater(new Runnable() {
+//			public void run() {
+//				ClienteCrear inst = new ClienteCrear();
+//				inst.setLocationRelativeTo(null);
+//				inst.setVisible(true);
+//			}
+//		});
+//	}
 	
 	public ClienteCrear() {
 		super();

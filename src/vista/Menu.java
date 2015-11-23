@@ -68,7 +68,8 @@ public class Menu extends javax.swing.JFrame {
 				btnAdministracionProveedores.setBounds(12, 63, 250, 40);
 				btnAdministracionProveedores.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
-						
+						ProveedorAdministracion pa = new ProveedorAdministracion();
+						pa.setVisible(true);
 					}
 				});
 			}

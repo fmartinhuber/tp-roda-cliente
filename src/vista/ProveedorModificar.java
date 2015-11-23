@@ -21,17 +21,15 @@ import javax.swing.SwingUtilities;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class ClienteModificar extends javax.swing.JFrame {
-
+public class ProveedorModificar extends javax.swing.JFrame {
+	
 	private static final long serialVersionUID = 1L;
-	private JLabel lblCUIT;
-	private JTextField txtCUIT;
-	private JTextField txtRazonSocial;
 	private JButton btnVolver;
-	private JButton btnModificarCliente;
-	private JTextField txtMail;
-	private JLabel lblMail;
-	private JLabel lblRazonSocial;
+	private JButton btnModificarProveedor;
+	private JTextField txtNombre;
+	private JTextField txtCUIT;
+	private JLabel lblNombre;
+	private JLabel lblCUIT;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -39,14 +37,14 @@ public class ClienteModificar extends javax.swing.JFrame {
 //	public static void main(String[] args) {
 //		SwingUtilities.invokeLater(new Runnable() {
 //			public void run() {
-//				ClienteModificar inst = new ClienteModificar();
+//				ProveedorModificar inst = new ProveedorModificar();
 //				inst.setLocationRelativeTo(null);
 //				inst.setVisible(true);
 //			}
 //		});
 //	}
 	
-	public ClienteModificar() {
+	public ProveedorModificar() {
 		super();
 		initGUI();
 	}
@@ -56,13 +54,19 @@ public class ClienteModificar extends javax.swing.JFrame {
 			setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 			pack();
 			setSize(400, 300);
-			setTitle("Modificar Cliente");
+			setTitle("Modificar Proveedor");
 			getContentPane().setLayout(null);
 			{
 				lblCUIT = new JLabel();
 				getContentPane().add(lblCUIT);
-				lblCUIT.setText("CUIT:");
+				lblCUIT.setText("CUIT: ");
 				lblCUIT.setBounds(12, 15, 150, 25);
+			}
+			{
+				lblNombre = new JLabel();
+				getContentPane().add(lblNombre);
+				lblNombre.setText("Nombre: ");
+				lblNombre.setBounds(12, 45, 150, 25);
 			}
 			{
 				txtCUIT = new JTextField();
@@ -70,36 +74,19 @@ public class ClienteModificar extends javax.swing.JFrame {
 				txtCUIT.setBounds(180, 15, 180, 25);
 			}
 			{
-				lblRazonSocial = new JLabel();
-				getContentPane().add(lblRazonSocial);
-				lblRazonSocial.setText("Razon Social: ");
-				lblRazonSocial.setBounds(12, 45, 150, 25);
+				txtNombre = new JTextField();
+				getContentPane().add(txtNombre);
+				txtNombre.setBounds(180, 45, 180, 25);
 			}
 			{
-				txtRazonSocial = new JTextField();
-				getContentPane().add(txtRazonSocial);
-				txtRazonSocial.setBounds(180, 45, 180, 25);
-			}
-			{
-				lblMail = new JLabel();
-				getContentPane().add(lblMail);
-				lblMail.setText("Mail: ");
-				lblMail.setBounds(12, 75, 150, 25);
-			}
-			{
-				txtMail = new JTextField();
-				getContentPane().add(txtMail);
-				txtMail.setBounds(180, 75, 180, 25);
-			}
-			{
-				btnModificarCliente = new JButton();
-				getContentPane().add(btnModificarCliente);
-				btnModificarCliente.setText("Modificar Cliente");
-				btnModificarCliente.setBounds(12, 185, 150, 65);
-				btnModificarCliente.addActionListener(new ActionListener() {
+				btnModificarProveedor = new JButton();
+				getContentPane().add(btnModificarProveedor);
+				btnModificarProveedor.setText("Modificar Proveedor");
+				btnModificarProveedor.setBounds(12, 185, 150, 65);
+				btnModificarProveedor.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						System.out.println("Implementar logica");
+						System.out.println("Implementar el modificar");
+						//TODO add your code for btnModificarProveedor.actionPerformed
 					}
 				});
 			}
