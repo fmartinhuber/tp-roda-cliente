@@ -1,12 +1,14 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+import dto.ProveedorDto;
 
 
 /**
@@ -28,6 +30,8 @@ public class ProveedorEliminar extends javax.swing.JFrame {
 	private JButton btnEliminar;
 	private JTextField txtCUIT;
 	private JLabel lblCUIT;
+	
+	private String auxCUIT;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -71,9 +75,21 @@ public class ProveedorEliminar extends javax.swing.JFrame {
 				btnEliminar.setText("Eliminar Proveedor");
 				btnEliminar.setBounds(12, 180, 150, 70);
 				btnEliminar.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {
-						System.out.println("Implementar el eliminar");
+					public void actionPerformed(ActionEvent evt) {						
 						//TODO add your code for btnEliminar.actionPerformed
+						
+						auxCUIT = txtCUIT.getText();						
+						
+						txtCUIT.setText("");						
+						
+						ProveedorDto proveedor = new ProveedorDto();
+						proveedor.setCUIT(auxCUIT);
+						
+						try{
+							//Delegado.getInstancia().crearCliente(cliente);							
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al eliminar un Proveedor");
+						}
 					}
 				});
 			}

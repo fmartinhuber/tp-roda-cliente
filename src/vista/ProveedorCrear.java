@@ -1,12 +1,14 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+import dto.ProveedorDto;
 
 
 /**
@@ -30,6 +32,8 @@ public class ProveedorCrear extends javax.swing.JFrame {
 	private JLabel lblNombre;
 	private JButton btnVolver;
 	private JButton btnCrear;
+	
+	private String auxCUIT, auxNombre;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -62,9 +66,24 @@ public class ProveedorCrear extends javax.swing.JFrame {
 				btnCrear.setText("Crear Proveedor");
 				btnCrear.setBounds(12, 185, 150, 65);
 				btnCrear.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {
-						System.out.println("Implementar el alta");
-						//TODO add your code for btnCrear.actionPerformed
+					public void actionPerformed(ActionEvent evt) {						
+						//TODO 
+						
+						auxCUIT = txtCUIT.getText();
+						auxNombre = txtNombre.getText();
+						
+						txtCUIT.setText("");
+						txtNombre.setText("");
+						
+						ProveedorDto proveedor = new ProveedorDto();
+						proveedor.setCUIT(auxCUIT);
+						proveedor.setNombre(auxNombre);
+						
+						try{
+							//Delegado.getInstancia().crearCliente(cliente);							
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al crear un Proveedor");
+						}
 					}
 				});
 			}

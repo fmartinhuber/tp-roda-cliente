@@ -1,12 +1,18 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+
+import delegate.Delegado;
+import dto.ClienteDto;
 
 
 /**
@@ -33,6 +39,8 @@ public class ClienteCrear extends javax.swing.JFrame {
 	private JLabel lblCUIT;
 	private JTextField txtMail;
 	private JLabel lblMail;
+	
+	private String auxCUIT, auxMail, auxRazonSocial;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -100,7 +108,30 @@ public class ClienteCrear extends javax.swing.JFrame {
 				btnAceptar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
 						//TODO: 
-						System.err.println("La logica de Crear Cliente");
+						
+//						ClienteDto cliente = new ClienteDto();
+//						cliente.setCUIT(lblCUIT.toString());
+//						cliente.setMail(lblMail.toString());
+//						cliente.setRazonSocial(lblRazonSocial.toString());
+						
+						auxCUIT = txtCUIT.getText();
+						auxMail = txtMail.getText();
+						auxRazonSocial = txtRazonSocial.getText();
+						
+						txtCUIT.setText("");
+						txtMail.setText("");
+						txtRazonSocial.setText("");
+						
+						ClienteDto cliente = new ClienteDto();
+						cliente.setCUIT(auxCUIT);
+						cliente.setMail(auxMail);
+						cliente.setRazonSocial(auxRazonSocial);
+						
+						try{
+							Delegado.getInstancia().crearCliente(cliente);
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al crear un Cliente");
+						}
 						
 					}
 				});

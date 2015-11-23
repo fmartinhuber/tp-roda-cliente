@@ -8,13 +8,17 @@ import java.util.List;
 
 import javax.naming.CommunicationException;
 
+import dto.ClienteDto;
+import dto.ProveedorDto;
 import dto.RodamientoDto;
+import interfaces.IAdministracionCC;
 import interfaces.IAdministracionOV;
 
 public class Delegado {
 	
 	private static Delegado instancia;
 	private IAdministracionOV manejoDeDatos;
+	private IAdministracionCC administracionCC;
 	
 	private Delegado() throws CommunicationException{
 	
@@ -38,7 +42,8 @@ public class Delegado {
 	private void conexionRemota() throws CommunicationException, MalformedURLException, NotBoundException
 	{
 		try {
-			manejoDeDatos=(IAdministracionOV)Naming.lookup("//localhost/SistemaRodamiento");
+			manejoDeDatos = (IAdministracionOV)Naming.lookup("//localhost/SistemaRodamiento");
+			administracionCC = (IAdministracionCC) Naming.lookup("//localhost/SistemaRodamiento");
 			System.out.println("Se conecto correctamente con el servidor");
 			System.out.println("========================================");
 			System.out.println();
@@ -58,5 +63,53 @@ public class Delegado {
 		}
 		return null;
 	}
-
+	
+	public void crearCliente(ClienteDto cliente){
+		try{
+			manejoDeDatos.crearCliente(cliente);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void eliminarCliente(ClienteDto cliente){
+		try{
+			manejoDeDatos.eliminarCliente(cliente);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void modificarCliente(ClienteDto cliente){
+		try{
+			manejoDeDatos.modificarCliente(cliente);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}	
+	
+	public void crearProveedor(ProveedorDto proveedor){
+		try{
+			administracionCC.crearProveedor(proveedor);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void eliminarProveedor(ProveedorDto proveedor){
+		try{
+			administracionCC.eliminarProveedor(proveedor);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void modificarPRoveedor(ProveedorDto proveedor){
+		try{
+			administracionCC.eliminarProveedor(proveedor);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
 }

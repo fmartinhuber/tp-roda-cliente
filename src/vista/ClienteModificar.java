@@ -1,12 +1,15 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+import delegate.Delegado;
+import dto.ClienteDto;
 
 
 /**
@@ -32,6 +35,8 @@ public class ClienteModificar extends javax.swing.JFrame {
 	private JTextField txtMail;
 	private JLabel lblMail;
 	private JLabel lblRazonSocial;
+	
+	private String auxCUIT, auxRazonSocial, auxMail;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -99,7 +104,25 @@ public class ClienteModificar extends javax.swing.JFrame {
 				btnModificarCliente.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
 						//TODO: 
-						System.out.println("Implementar logica");
+						
+						auxCUIT = txtCUIT.getText();
+						auxMail = txtMail.getText();
+						auxRazonSocial = txtRazonSocial.getText();
+						
+						txtCUIT.setText("");
+						txtMail.setText("");
+						txtRazonSocial.setText("");
+						
+						ClienteDto cliente = new ClienteDto();
+						cliente.setCUIT(auxCUIT);
+						cliente.setMail(auxMail);
+						cliente.setRazonSocial(auxRazonSocial);
+						
+						try{
+							Delegado.getInstancia().modificarCliente(cliente);
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al modificar un Cliente");
+						}
 					}
 				});
 			}

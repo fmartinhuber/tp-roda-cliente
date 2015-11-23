@@ -1,12 +1,15 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+import delegate.Delegado;
+import dto.ClienteDto;
 
 
 /**
@@ -28,6 +31,8 @@ public class ClienteEliminar extends javax.swing.JFrame {
 	private JTextField txtCUIT;
 	private JButton btnEliminarCliente;
 	private JButton btnVolver;
+	
+	private String auxCUIT;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -73,7 +78,19 @@ public class ClienteEliminar extends javax.swing.JFrame {
 				btnEliminarCliente.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent evt) {
 						//TODO: 
-						System.out.println("Implementar logica");
+						
+						auxCUIT = txtCUIT.getText();
+						
+						txtCUIT.setText("");
+						
+						ClienteDto cliente = new ClienteDto();
+						cliente.setCUIT(auxCUIT);
+						
+						try{
+							Delegado.getInstancia().eliminarCliente(cliente);
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al eliminar un Cliente");
+						}
 					}
 				});
 			}

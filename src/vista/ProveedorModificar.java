@@ -1,12 +1,14 @@
 package vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import javax.swing.WindowConstants;
-import javax.swing.SwingUtilities;
+
+import dto.ProveedorDto;
 
 
 /**
@@ -30,6 +32,8 @@ public class ProveedorModificar extends javax.swing.JFrame {
 	private JTextField txtCUIT;
 	private JLabel lblNombre;
 	private JLabel lblCUIT;
+	
+	private String auxCUIT, auxNombre;
 
 	/**
 	* Auto-generated main method to display this JFrame
@@ -84,9 +88,24 @@ public class ProveedorModificar extends javax.swing.JFrame {
 				btnModificarProveedor.setText("Modificar Proveedor");
 				btnModificarProveedor.setBounds(12, 185, 150, 65);
 				btnModificarProveedor.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {
-						System.out.println("Implementar el modificar");
+					public void actionPerformed(ActionEvent evt) {						
 						//TODO add your code for btnModificarProveedor.actionPerformed
+						
+						auxCUIT = txtCUIT.getText();
+						auxNombre = txtNombre.getText();
+						
+						txtCUIT.setText("");
+						txtNombre.setText("");
+						
+						ProveedorDto proveedor = new ProveedorDto();
+						proveedor.setCUIT(auxCUIT);
+						proveedor.setNombre(auxNombre);
+						
+						try{
+							//Delegado.getInstancia().crearCliente(cliente);							
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Error al modificar un Proveedor");
+						}
 					}
 				});
 			}
