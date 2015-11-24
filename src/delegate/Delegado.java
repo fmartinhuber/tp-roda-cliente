@@ -54,15 +54,16 @@ public class Delegado {
 	
 	//Aca van los metodos
 	
-	@Deprecated
-	public List<RodamientoDto> obtenerRodamientos(){
-		try{
-			return manejoDeDatos.obtenerRodamientos();
-		} catch(RemoteException e){
-			e.printStackTrace();
-		}
-		return null;
-	}
+//	@Deprecated
+//	public List<RodamientoDto> obtenerRodamientos(){
+//		try{
+//			//TODO: Rama fijate que esto tira error
+//			//return manejoDeDatos.obtenerRodamientos();
+//		} catch(RemoteException e){
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 	
 	public void crearCliente(ClienteDto cliente){
 		try{
