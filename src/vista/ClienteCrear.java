@@ -106,14 +106,7 @@ public class ClienteCrear extends javax.swing.JFrame {
 				btnAceptar.setText("Crear Cliente");
 				btnAceptar.setBounds(12, 185, 150, 65);
 				btnAceptar.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						
-//						ClienteDto cliente = new ClienteDto();
-//						cliente.setCUIT(lblCUIT.toString());
-//						cliente.setMail(lblMail.toString());
-//						cliente.setRazonSocial(lblRazonSocial.toString());
-						
+					public void actionPerformed(ActionEvent evt) {						
 						auxCUIT = txtCUIT.getText();
 						auxMail = txtMail.getText();
 						auxRazonSocial = txtRazonSocial.getText();

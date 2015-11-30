@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import delegate.Delegado;
 import dto.ProveedorDto;
 
 
@@ -88,9 +89,7 @@ public class ProveedorModificar extends javax.swing.JFrame {
 				btnModificarProveedor.setText("Modificar Proveedor");
 				btnModificarProveedor.setBounds(12, 185, 150, 65);
 				btnModificarProveedor.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {						
-						//TODO add your code for btnModificarProveedor.actionPerformed
-						
+					public void actionPerformed(ActionEvent evt) {											
 						auxCUIT = txtCUIT.getText();
 						auxNombre = txtNombre.getText();
 						
@@ -101,8 +100,8 @@ public class ProveedorModificar extends javax.swing.JFrame {
 						proveedor.setCUIT(auxCUIT);
 						proveedor.setNombre(auxNombre);
 						
-						try{
-							//Delegado.getInstancia().crearCliente(cliente);							
+						try{			
+							Delegado.getInstancia().modificarProveedor(proveedor);
 						}catch(Exception e){
 							JOptionPane.showMessageDialog(null, "Error al modificar un Proveedor");
 						}

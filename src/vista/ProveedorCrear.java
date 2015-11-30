@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import delegate.Delegado;
 import dto.ProveedorDto;
 
 
@@ -66,9 +67,7 @@ public class ProveedorCrear extends javax.swing.JFrame {
 				btnCrear.setText("Crear Proveedor");
 				btnCrear.setBounds(12, 185, 150, 65);
 				btnCrear.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {						
-						//TODO 
-						
+					public void actionPerformed(ActionEvent evt) {						 						
 						auxCUIT = txtCUIT.getText();
 						auxNombre = txtNombre.getText();
 						
@@ -80,7 +79,7 @@ public class ProveedorCrear extends javax.swing.JFrame {
 						proveedor.setNombre(auxNombre);
 						
 						try{
-							//Delegado.getInstancia().crearCliente(cliente);							
+							Delegado.getInstancia().crearProveedor(proveedor);
 						}catch(Exception e){
 							JOptionPane.showMessageDialog(null, "Error al crear un Proveedor");
 						}

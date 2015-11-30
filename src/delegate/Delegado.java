@@ -52,19 +52,8 @@ public class Delegado {
 		}
 	}
 	
-	//Aca van los metodos
-	
-//	@Deprecated
-//	public List<RodamientoDto> obtenerRodamientos(){
-//		try{
-//			//TODO: Rama fijate que esto tira error
-//			//return manejoDeDatos.obtenerRodamientos();
-//		} catch(RemoteException e){
-//			e.printStackTrace();
-//		}
-//		return null;
-//	}
-	
+	// Acá van los métodos
+		
 	public void crearCliente(ClienteDto cliente){
 		try{
 			manejoDeDatosOV.crearCliente(cliente);
@@ -105,9 +94,9 @@ public class Delegado {
 		}
 	}
 	
-	public void modificarPRoveedor(ProveedorDto proveedor){
+	public void modificarProveedor(ProveedorDto proveedor){
 		try{
-			manejoDeDatosCC.eliminarProveedor(proveedor);
+			manejoDeDatosCC.modificarProveedor(proveedor);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}

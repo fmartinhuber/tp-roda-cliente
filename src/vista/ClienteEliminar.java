@@ -76,9 +76,7 @@ public class ClienteEliminar extends javax.swing.JFrame {
 				btnEliminarCliente.setText("Eliminar Cliente");
 				btnEliminarCliente.setBounds(12, 180, 150, 70);
 				btnEliminarCliente.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {
-						//TODO: 
-						
+					public void actionPerformed(ActionEvent evt) { 						
 						auxCUIT = txtCUIT.getText();
 						
 						txtCUIT.setText("");

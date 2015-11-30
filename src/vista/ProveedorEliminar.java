@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+import delegate.Delegado;
 import dto.ProveedorDto;
 
 
@@ -75,9 +76,7 @@ public class ProveedorEliminar extends javax.swing.JFrame {
 				btnEliminar.setText("Eliminar Proveedor");
 				btnEliminar.setBounds(12, 180, 150, 70);
 				btnEliminar.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent evt) {						
-						//TODO add your code for btnEliminar.actionPerformed
-						
+					public void actionPerformed(ActionEvent evt) {																		
 						auxCUIT = txtCUIT.getText();						
 						
 						txtCUIT.setText("");						
@@ -86,7 +85,7 @@ public class ProveedorEliminar extends javax.swing.JFrame {
 						proveedor.setCUIT(auxCUIT);
 						
 						try{
-							//Delegado.getInstancia().crearCliente(cliente);							
+							Delegado.getInstancia().eliminarProveedor(proveedor);
 						}catch(Exception e){
 							JOptionPane.showMessageDialog(null, "Error al eliminar un Proveedor");
 						}
