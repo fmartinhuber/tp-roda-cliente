@@ -17,8 +17,8 @@ import interfaces.IAdministracionOV;
 public class Delegado {
 	
 	private static Delegado instancia;
-	private IAdministracionOV manejoDeDatos;
-	private IAdministracionCC administracionCC;
+	private IAdministracionOV manejoDeDatosOV;
+	private IAdministracionCC manejoDeDatosCC;
 	
 	private Delegado() throws CommunicationException{
 	
@@ -42,8 +42,8 @@ public class Delegado {
 	private void conexionRemota() throws CommunicationException, MalformedURLException, NotBoundException
 	{
 		try {
-			manejoDeDatos = (IAdministracionOV)Naming.lookup("//localhost/SistemaRodamiento");
-			administracionCC = (IAdministracionCC) Naming.lookup("//localhost/SistemaRodamiento");
+			manejoDeDatosOV = (IAdministracionOV) Naming.lookup("//localhost:1099/SistemaRodamientoOV");
+			manejoDeDatosCC = (IAdministracionCC) Naming.lookup("//localhost:1099/SistemaRodamientoCC");
 			System.out.println("Se conecto correctamente con el servidor");
 			System.out.println("========================================");
 			System.out.println();
@@ -67,7 +67,7 @@ public class Delegado {
 	
 	public void crearCliente(ClienteDto cliente){
 		try{
-			manejoDeDatos.crearCliente(cliente);
+			manejoDeDatosOV.crearCliente(cliente);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
@@ -75,7 +75,7 @@ public class Delegado {
 	
 	public void eliminarCliente(ClienteDto cliente){
 		try{
-			manejoDeDatos.eliminarCliente(cliente);
+			manejoDeDatosOV.eliminarCliente(cliente);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
@@ -83,7 +83,7 @@ public class Delegado {
 	
 	public void modificarCliente(ClienteDto cliente){
 		try{
-			manejoDeDatos.modificarCliente(cliente);
+			manejoDeDatosOV.modificarCliente(cliente);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
@@ -91,7 +91,7 @@ public class Delegado {
 	
 	public void crearProveedor(ProveedorDto proveedor){
 		try{
-			administracionCC.crearProveedor(proveedor);
+			manejoDeDatosCC.crearProveedor(proveedor);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
@@ -99,7 +99,7 @@ public class Delegado {
 	
 	public void eliminarProveedor(ProveedorDto proveedor){
 		try{
-			administracionCC.eliminarProveedor(proveedor);
+			manejoDeDatosCC.eliminarProveedor(proveedor);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
@@ -107,7 +107,7 @@ public class Delegado {
 	
 	public void modificarPRoveedor(ProveedorDto proveedor){
 		try{
-			administracionCC.eliminarProveedor(proveedor);
+			manejoDeDatosCC.eliminarProveedor(proveedor);
 		}catch(RemoteException e){
 			e.printStackTrace();
 		}
